@@ -46,13 +46,19 @@ def merge_tiles(zoom, lat_start, lat_stop, lon_start, lon_stop, satellite=True):
             
             del i
     
-    result.save("map_%s.%s" % (TYPE, ext))
+    result.save("map_%s.%s" % (TYPE, 'png'))
 
 if __name__ == "__main__":
     
-    zoom = 15
+    #zoom = 15
 
-    lat_start, lon_start = 46.53, 6.6
-    lat_stop, lon_stop = 46.49, 6.7
-    
+    #lat_start, lon_start = 46.53, 6.6
+    #lat_stop, lon_stop = 46.49, 6.7
+
+    zoom = 20
+
+    lat_start, lon_start = 30.49388, 103.57587
+    lat_stop, lon_stop = 30.49217, 103.57899
+
+
     merge_tiles(zoom, lat_start, lat_stop, lon_start, lon_stop, satellite=True)

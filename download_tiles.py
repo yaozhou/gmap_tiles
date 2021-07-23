@@ -25,7 +25,8 @@ def download_tiles(zoom, lat_start, lat_stop, lon_start, lon_stop, satellite=Tru
             filename = None
             
             if satellite:        
-                url = "http://khm1.google.com/kh?v=87&hl=en&x=%d&y=%d&z=%d" % (x, y, zoom)
+                #url = "http://khm1.google.com/kh?v=87&hl=en&x=%d&y=%d&z=%d" % (x, y, zoom)
+                url = "https://khms1.googleapis.com/kh?v=904&hl=en-US&x=%d&y=%d&z=%d" % (x, y, zoom)
                 filename = "%d_%d_%d_s.jpg" % (zoom, x, y)
             else:
                 url = "http://mt1.google.com/vt/lyrs=h@162000000&hl=en&x=%d&s=&y=%d&z=%d" % (x, y, zoom)
@@ -57,9 +58,9 @@ def download_tiles(zoom, lat_start, lat_stop, lon_start, lon_stop, satellite=Tru
 
 if __name__ == "__main__":
     
-    zoom = 15
+    zoom = 20
 
-    lat_start, lon_start = 46.53, 6.6
-    lat_stop, lon_stop = 46.49, 6.7
+    lat_start, lon_start = 30.49388, 103.57587
+    lat_stop, lon_stop = 30.49217, 103.57899
         
     download_tiles(zoom, lat_start, lat_stop, lon_start, lon_stop, satellite=True)
